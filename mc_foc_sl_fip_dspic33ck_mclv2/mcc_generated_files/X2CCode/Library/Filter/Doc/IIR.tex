@@ -1,0 +1,119 @@
+\XtoCBlock{IIR}
+\label{block:IIR}
+\begin{figure}[H]\includegraphics{IIR}\end{figure} 
+
+\begin{XtoCtabular}{Inports}
+In & Input In(k)\tabularnewline
+\hline
+\end{XtoCtabular}
+
+
+\begin{XtoCtabular}{Outports}
+Out & Output Out(k)\tabularnewline
+\hline
+\end{XtoCtabular}
+
+\begin{XtoCMaskParamTabular}{Mask Parameters}
+\rowcolor[gray]{0.8}\textbf{Name} & \textbf{ID} & \textbf{Description}\tabularnewline\hline
+CoeffB & 1 & Array with filter coefficients of numerator\tabularnewline
+\hline
+CoeffA & 2 & Array with filter coefficients of denominator\tabularnewline
+\hline
+ts\_fact & 3 & Multiplication factor of base sampling time (in integer format)\tabularnewline
+\hline
+\end{XtoCMaskParamTabular}
+
+\subsubsection*{Description:}
+Transfer function:
+
+    H(z) = (b0.z\textasciicircum{}n + b1.z + ...+ bn) / (a0.z\textasciicircum{}n + a1.z + ... + an)
+
+
+
+The maximum filter order is 32.
+
+The order of the denominator has to be greater than or equal to the order of the numerator.
+
+% include optional documentation file
+\InputIfFileExists{\XcHomePath/Library/Filter/Doc/IIR_Info.tex}{\vspace{1ex}}{}
+
+\subsubsection*{Implementations:}
+\begin{tabular}{l l}
+\textbf{FiP16} & 16 Bit Fixed Point Implementation\tabularnewline
+\textbf{FiP32} & 32 Bit Fixed Point Implementation\tabularnewline
+\textbf{Float32} & 32 Bit Floating Point Implementation\tabularnewline
+\textbf{Float64} & 64 Bit Floating Point Implementation\tabularnewline
+\end{tabular}
+
+\XtoCImplementation{FiP16}
+\nopagebreak[0]
+
+16 Bit Fixed Point Implementation
+
+\begin{XtoCtabular}{Inports Data Type}
+In & int16\tabularnewline
+\hline
+\end{XtoCtabular}
+
+\begin{XtoCtabular}{Outports Data Type}
+Out & int16\tabularnewline
+\hline
+\end{XtoCtabular}
+
+\ifdefined \AddTestReports
+\InputIfFileExists{\XcHomePath/Library/Filter/Doc/Test-Results/Test_IIR_FiP16.tex}{}{}
+\fi
+\XtoCImplementation{FiP32}
+\nopagebreak[0]
+
+32 Bit Fixed Point Implementation
+
+\begin{XtoCtabular}{Inports Data Type}
+In & int32\tabularnewline
+\hline
+\end{XtoCtabular}
+
+\begin{XtoCtabular}{Outports Data Type}
+Out & int32\tabularnewline
+\hline
+\end{XtoCtabular}
+
+\ifdefined \AddTestReports
+\InputIfFileExists{\XcHomePath/Library/Filter/Doc/Test-Results/Test_IIR_FiP32.tex}{}{}
+\fi
+\XtoCImplementation{Float32}
+\nopagebreak[0]
+
+32 Bit Floating Point Implementation
+
+\begin{XtoCtabular}{Inports Data Type}
+In & float32\tabularnewline
+\hline
+\end{XtoCtabular}
+
+\begin{XtoCtabular}{Outports Data Type}
+Out & float32\tabularnewline
+\hline
+\end{XtoCtabular}
+
+\ifdefined \AddTestReports
+\InputIfFileExists{\XcHomePath/Library/Filter/Doc/Test-Results/Test_IIR_Float32.tex}{}{}
+\fi
+\XtoCImplementation{Float64}
+\nopagebreak[0]
+
+64 Bit Floating Point Implementation
+
+\begin{XtoCtabular}{Inports Data Type}
+In & float64\tabularnewline
+\hline
+\end{XtoCtabular}
+
+\begin{XtoCtabular}{Outports Data Type}
+Out & float64\tabularnewline
+\hline
+\end{XtoCtabular}
+
+\ifdefined \AddTestReports
+\InputIfFileExists{\XcHomePath/Library/Filter/Doc/Test-Results/Test_IIR_Float64.tex}{}{}
+\fi

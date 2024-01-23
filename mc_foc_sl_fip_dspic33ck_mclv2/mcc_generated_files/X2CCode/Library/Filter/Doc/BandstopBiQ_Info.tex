@@ -1,0 +1,75 @@
+
+%butter
+\textbf{Butterworth}
+\begin{itemize}
+    \item center frequency $f_c$
+    \begin{itemize}
+        \item center frequency $f_c$ is given by ${f_c}^2={f_{c1}}^2*{f_{c2}}^2$
+		\item phase discontinuity @center frequency $f_c$
+    \end{itemize}
+    \item @lower cut-off frequency~ $f_{c1}$
+    \begin{itemize}
+        \item -3dB attenuation
+        \item -45 degree phaseshift
+    \end{itemize}
+	\item @upper cut-off frequency~$f_{c2}$
+    \begin{itemize}
+        \item -3dB attenuation
+        \item 45 degree phaseshift
+    \end{itemize}
+    \item passband 
+    \begin{itemize}
+		\item roll-off dynamics are constant and not adjustable
+    \end{itemize} 
+\end{itemize}
+
+E.g.: \\
+The cut-off frequencies are $f_{c1}=100$Hz and $f_{c2}=300$Hz.\\
+The bodeplot is shown in the figure \ref{fig:bs_butter} below.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.75\linewidth]{bs_butter.png}
+  \caption{Bodeplot Butterworth bandstop.}
+  \label{fig:bs_butter}
+\end{figure}
+	
+% Cheby
+\textbf{Chebyshev}\\
+\emph{Note:} A second order Chebyshev I bandstop has the same bodeplot as a second order Chebyshev II bandstop. Hence, only the 'Chebyshev' option is given.\\
+\begin{itemize}
+    \item center frequency $f_c$
+    \begin{itemize}
+        \item center frequency $f_c$ is given by ${f_c}^2={f_{c1}}^2*{f_{c2}}^2$
+		\item phase discontinuity @center frequency $f_c$
+    \end{itemize}
+    \item @lower cut-off frequency~ $f_{c1}$
+    \begin{itemize}
+        \item $-rc$dB attenuation
+        \item -phaseshift proportional to $rc$
+    \end{itemize}
+	\item @upper cut-off frequency~$f_{c2}$
+    \begin{itemize}
+        \item $-rc$dB attenuation
+        \item phaseshift proportional to $rc$
+    \end{itemize}
+    \item passband 
+    \begin{itemize}
+		\item roll-off dynamics are adjustable using parameter $rc$
+    \end{itemize} 
+\end{itemize}
+
+
+E.g.: \\
+The cut-off frequencies are $f_{c1}=100$Hz and $f_{c2}=300$Hz.\\
+The parameter $rc$ is set to $10$dB.\\
+The bodeplot is shown in the figure \ref{fig:bs_cheby1} below.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.75\linewidth]{bs_cheby1.png}
+  \caption{Bodeplot Chebyshev bandstop. $rc=10$dB}
+  \label{fig:bs_cheby1}
+\end{figure}
+
+%bessel
+\textbf{Bessel}\\
+\emph{Note:} A second order Bessel bandstop behaves exactly like a second order Butterworth bandstop. Hence, no 'Bessel' option is given.

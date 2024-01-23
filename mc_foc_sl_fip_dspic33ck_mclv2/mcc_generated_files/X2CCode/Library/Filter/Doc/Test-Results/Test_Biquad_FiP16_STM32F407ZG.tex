@@ -1,0 +1,153 @@
+\XtoCVerification{Biquad FiP16 CPU STM32F407ZG}
+\begin{tabular}{l l}
+\textbf{Date of Test} & 2022-04-06 \tabularnewline
+\textbf{Target controller} & STM32F407ZG \tabularnewline
+\end{tabular}
+\vspace{1ex}
+\XtoCTestCase{Inport test}{1}
+Inport test for Filter block Biquad.
+
+\vspace{1em}
+\begin{tabularx}{\textwidth}{|c|c|c|c|c|>{\centering\arraybackslash}X|c|}
+\hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.8}\textbf{Test results}} \tabularnewline \hline
+\textbf{Time step} & 1 & 2 & 3 & 4 & ... & 73 \tabularnewline \hline
+\textbf{CPU cycles} & 106 & 106 & 106 & 106 & ... & 106 \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Inputs}} \tabularnewline \hline
+\textbf{In (DSP)} & -1842 & -679 & 5729 & 7954 & ... & 15256 \tabularnewline \hline
+\textbf{In} & -0.056 & -0.021 & 0.175 & 0.243 & ... & 0.466 \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Parameters}} \tabularnewline \hline
+\textbf{b0} & \multicolumn{6}{c|}{0.2} \tabularnewline \hline
+\textbf{b1} & \multicolumn{6}{c|}{0.1} \tabularnewline \hline
+\textbf{b2} & \multicolumn{6}{c|}{0.3} \tabularnewline \hline
+\textbf{a0} & \multicolumn{6}{c|}{1.1} \tabularnewline \hline
+\textbf{a1} & \multicolumn{6}{c|}{-0.7} \tabularnewline \hline
+\textbf{a2} & \multicolumn{6}{c|}{0.8} \tabularnewline \hline
+\textbf{ts\_fact} & \multicolumn{6}{c|}{1} \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Outputs}} \tabularnewline \hline
+\textbf{Out} & -0.01 & -0.015 & 0.012 & 0.073 & ... & 0.257 \tabularnewline \hline
+\textbf{Exp. Out} & -0.01 & -0.015 & 0.012 & 0.073 & ... & 0.257 \tabularnewline \hline
+\textbf{Out (DSP)} & -335 & -505 & 399 & 2402 & ... & 8434 \tabularnewline \hline
+\textbf{Exp. Out (DSP)} & -335 & -504 & 401 & 2403 & ... & 8434 \tabularnewline \hline
+\end{tabularx}
+\vspace{1ex}
+
+\begin{XtoCtabular}{Test settings}
+Tolerance Out & $\pm$1,5259e-04 ($\pm$5 LSB) \tabularnewline \hline
+\end{XtoCtabular}
+
+\begin{XtoCtabular}{Test statistics}
+Min CPU cycles & 106 \tabularnewline \hline
+Max CPU cycles & 106 \tabularnewline \hline
+Avg CPU cycles & 106 \tabularnewline \hline
+\end{XtoCtabular}
+\XtoCTestCase{Conversion test}{1}
+Conversion test for Filter block Biquad.
+
+\vspace{1em}
+\begin{tabularx}{\textwidth}{|c|c|c|c|c|>{\centering\arraybackslash}X|c|}
+\hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.8}\textbf{Test results}} \tabularnewline \hline
+\textbf{Time step} & 1 & 2 & 3 & 4 & ... & 8 \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Mask parameters}} \tabularnewline \hline
+\textbf{b0} & 0 & 0.1 & 0.2 & 0.5 & ... & 10 \tabularnewline \hline
+\textbf{b1} & 0 & 0.1 & 0.2 & 0.5 & ... & 10 \tabularnewline \hline
+\textbf{b2} & 0 & 0.1 & 0.2 & 0.5 & ... & 10 \tabularnewline \hline
+\textbf{a0} & 0.1 & 0.1 & 0.1 & 1 & ... & 1 \tabularnewline \hline
+\textbf{a1} & 0 & 0.1 & 0.2 & 0.5 & ... & 10 \tabularnewline \hline
+\textbf{a2} & 0 & 0.1 & 0.2 & 0.5 & ... & 10 \tabularnewline \hline
+\textbf{ts\_fact} & 1 & 1 & 1 & 1 & ... & 1 \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Controller parameters}} \tabularnewline \hline
+\textbf{b2} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{a1} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{a2} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{sfra2} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{sfrb0} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{sfrb1} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{sfrb2} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{sfra1} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{b0} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{b1} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{Exp. b2} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{Exp. a1} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{Exp. a2} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{Exp. sfra2} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{Exp. sfrb0} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{Exp. sfrb1} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{Exp. sfrb2} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{Exp. sfra1} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{Exp. b0} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{Exp. b1} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\end{tabularx}
+\vspace{1ex}
+
+\begin{XtoCtabular}{Test settings}
+Tolerance b2 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance a1 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance a2 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance sfra2 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance sfrb0 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance sfrb1 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance sfrb2 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance sfra1 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance b0 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance b1 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+\end{XtoCtabular}
+\XtoCTestCase{Conversion-on-Target test}{1}
+Conversion-on-Target test for Filter block Biquad.
+
+\vspace{1em}
+\begin{tabularx}{\textwidth}{|c|c|c|c|c|>{\centering\arraybackslash}X|c|}
+\hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.8}\textbf{Test results}} \tabularnewline \hline
+\textbf{Time step} & 1 & 2 & 3 & 4 & ... & 8 \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Mask parameters}} \tabularnewline \hline
+\textbf{b0} & 0 & 0.1 & 0.2 & 0.5 & ... & 10 \tabularnewline \hline
+\textbf{b1} & 0 & 0.1 & 0.2 & 0.5 & ... & 10 \tabularnewline \hline
+\textbf{b2} & 0 & 0.1 & 0.2 & 0.5 & ... & 10 \tabularnewline \hline
+\textbf{a0} & 0.1 & 0.1 & 0.1 & 1 & ... & 1 \tabularnewline \hline
+\textbf{a1} & 0 & 0.1 & 0.2 & 0.5 & ... & 10 \tabularnewline \hline
+\textbf{a2} & 0 & 0.1 & 0.2 & 0.5 & ... & 10 \tabularnewline \hline
+\textbf{ts\_fact} & 1 & 1 & 1 & 1 & ... & 1 \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Controller parameters}} \tabularnewline \hline
+\textbf{b2} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{a1} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{a2} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{sfra2} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{sfrb0} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{sfrb1} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{sfrb2} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{sfra1} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{b0} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{b1} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{Exp. b2} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{Exp. a1} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{Exp. a2} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{Exp. sfra2} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{Exp. sfrb0} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{Exp. sfrb1} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{Exp. sfrb2} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{Exp. sfra1} & 15 & 14 & 13 & 15 & ... & 11 \tabularnewline \hline
+\textbf{Exp. b0} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\textbf{Exp. b1} & 0 & 16384 & 16384 & 16384 & ... & 20480 \tabularnewline \hline
+\end{tabularx}
+\vspace{1ex}
+
+\begin{XtoCtabular}{Test settings}
+Tolerance b2 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance a1 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance a2 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance sfra2 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance sfrb0 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance sfrb1 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance sfrb2 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance sfra1 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance b0 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+Tolerance b1 & $\pm$0,0000e+00 ($\pm$0 LSB) \tabularnewline \hline
+\end{XtoCtabular}
+
+\begin{XtoCtabular}{Test statistics}
+Min CPU cycles & 2852 \tabularnewline \hline
+Max CPU cycles & 6624 \tabularnewline \hline
+Avg CPU cycles & 4536 \tabularnewline \hline
+\end{XtoCtabular}

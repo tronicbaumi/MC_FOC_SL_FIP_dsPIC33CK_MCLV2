@@ -1,0 +1,39 @@
+\XtoCVerification{FundFreq FiP16 CPU TM4C123GH6}
+\begin{tabular}{l l}
+\textbf{Date of Test} & 2022-06-03 \tabularnewline
+\textbf{Target controller} & TM4C123GH6 \tabularnewline
+\end{tabular}
+\vspace{1ex}
+\XtoCTestCase{Inport test}{1}
+Inport test for Filter block FundFreq.
+
+\vspace{1em}
+\begin{tabularx}{\textwidth}{|c|c|c|c|c|>{\centering\arraybackslash}X|c|}
+\hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.8}\textbf{Test results}} \tabularnewline \hline
+\textbf{Time step} & 1 & 2 & 3 & 4 & ... & 111 \tabularnewline \hline
+\textbf{CPU cycles} & 153 & 153 & 153 & 153 & ... & 153 \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Inputs}} \tabularnewline \hline
+\textbf{In (DSP)} & 6554 & -705 & -6595 & -10422 & ... & 13812 \tabularnewline \hline
+\textbf{phi (DSP)} & -32768 & -30997 & -29226 & -27454 & ... & 30997 \tabularnewline \hline
+\textbf{In} & 0.2 & -0.022 & -0.201 & -0.318 & ... & 0.422 \tabularnewline \hline
+\textbf{phi} & -1 & -0.946 & -0.892 & -0.838 & ... & 0.946 \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Parameters}} \tabularnewline \hline
+\textbf{ts\_fact} & \multicolumn{6}{c|}{1} \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Outputs}} \tabularnewline \hline
+\textbf{Out} & 0 & 0 & 0 & 0 & ... & 0.135 \tabularnewline \hline
+\textbf{Exp. Out} & 0 & 0 & 0 & 0 & ... & 0.135 \tabularnewline \hline
+\textbf{Out (DSP)} & 0 & 0 & 0 & 0 & ... & 4428 \tabularnewline \hline
+\textbf{Exp. Out (DSP)} & 0 & 0 & 0 & 0 & ... & 4430 \tabularnewline \hline
+\end{tabularx}
+\vspace{1ex}
+
+\begin{XtoCtabular}{Test settings}
+Tolerance Out & $\pm$3,0518e-04 ($\pm$10 LSB) \tabularnewline \hline
+\end{XtoCtabular}
+
+\begin{XtoCtabular}{Test statistics}
+Min CPU cycles & 153 \tabularnewline \hline
+Max CPU cycles & 175 \tabularnewline \hline
+Avg CPU cycles & 153 \tabularnewline \hline
+\end{XtoCtabular}

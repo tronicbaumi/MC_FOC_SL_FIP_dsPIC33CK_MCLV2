@@ -1,0 +1,44 @@
+\XtoCVerification{ACDC Float32 CPU TM4C123GH6}
+\begin{tabular}{l l}
+\textbf{Date of Test} & 2022-06-03 \tabularnewline
+\textbf{Target controller} & TM4C123GH6 \tabularnewline
+\end{tabular}
+\vspace{1ex}
+\XtoCTestCase{Inport test}{1}
+Inport test for Filter block ACDC.
+
+\vspace{1em}
+\begin{tabularx}{\textwidth}{|c|c|c|>{\centering\arraybackslash}X|c|}
+\hline
+\multicolumn{5}{|l|}{\cellcolor[gray]{0.8}\textbf{Test results}} \tabularnewline \hline
+\textbf{Time step} & 1 & 2 & ... & 111 \tabularnewline \hline
+\textbf{CPU cycles} & 83 & 83 & ... & 83 \tabularnewline \hline
+\multicolumn{5}{|l|}{\cellcolor[gray]{0.9}\textit{Inputs}} \tabularnewline \hline
+\textbf{In (DSP)} & 1.59 & 1.142 & ... & 2.038 \tabularnewline \hline
+\textbf{phi (DSP)} & -3.142 & -2.972 & ... & 2.972 \tabularnewline \hline
+\textbf{In} & 1.59 & 1.142 & ... & 2.038 \tabularnewline \hline
+\textbf{phi} & -3.142 & -2.972 & ... & 2.972 \tabularnewline \hline
+\multicolumn{5}{|l|}{\cellcolor[gray]{0.9}\textit{Parameters}} \tabularnewline \hline
+\textbf{ts\_fact} & \multicolumn{4}{c|}{1} \tabularnewline \hline
+\multicolumn{5}{|l|}{\cellcolor[gray]{0.9}\textit{Outputs}} \tabularnewline \hline
+\textbf{AC} & 1.59 & 1.142 & ... & 0.448 \tabularnewline \hline
+\textbf{DC} & 0 & 0 & ... & 1.59 \tabularnewline \hline
+\textbf{Exp. AC} & 1.59 & 1.142 & ... & 0.448 \tabularnewline \hline
+\textbf{Exp. DC} & 0 & 0 & ... & 1.59 \tabularnewline \hline
+\textbf{AC (DSP)} & 1.59 & 1.142 & ... & 0.448 \tabularnewline \hline
+\textbf{DC (DSP)} & 0 & 0 & ... & 1.59 \tabularnewline \hline
+\textbf{Exp. AC (DSP)} & 1.59 & 1.142 & ... & 0.448 \tabularnewline \hline
+\textbf{Exp. DC (DSP)} & 0 & 0 & ... & 1.59 \tabularnewline \hline
+\end{tabularx}
+\vspace{1ex}
+
+\begin{XtoCtabular}{Test settings}
+Tolerance AC & $\pm$4,6566e-07 ($\pm$1000 LSB) \tabularnewline \hline
+Tolerance DC & $\pm$2,3283e-07 ($\pm$500 LSB) \tabularnewline \hline
+\end{XtoCtabular}
+
+\begin{XtoCtabular}{Test statistics}
+Min CPU cycles & 83 \tabularnewline \hline
+Max CPU cycles & 105 \tabularnewline \hline
+Avg CPU cycles & 83 \tabularnewline \hline
+\end{XtoCtabular}

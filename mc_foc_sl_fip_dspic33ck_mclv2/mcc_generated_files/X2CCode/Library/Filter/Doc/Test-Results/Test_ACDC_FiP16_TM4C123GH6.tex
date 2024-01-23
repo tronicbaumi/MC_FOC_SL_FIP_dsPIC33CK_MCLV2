@@ -1,0 +1,44 @@
+\XtoCVerification{ACDC FiP16 CPU TM4C123GH6}
+\begin{tabular}{l l}
+\textbf{Date of Test} & 2022-06-03 \tabularnewline
+\textbf{Target controller} & TM4C123GH6 \tabularnewline
+\end{tabular}
+\vspace{1ex}
+\XtoCTestCase{Inport test}{1}
+Inport test for Filter block ACDC.
+
+\vspace{1em}
+\begin{tabularx}{\textwidth}{|c|c|c|c|c|>{\centering\arraybackslash}X|c|}
+\hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.8}\textbf{Test results}} \tabularnewline \hline
+\textbf{Time step} & 1 & 2 & 3 & 4 & ... & 111 \tabularnewline \hline
+\textbf{CPU cycles} & 95 & 95 & 95 & 95 & ... & 95 \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Inputs}} \tabularnewline \hline
+\textbf{In (DSP)} & 9830 & 7061 & 4372 & 1840 & ... & 12599 \tabularnewline \hline
+\textbf{phi (DSP)} & -32768 & -30997 & -29226 & -27454 & ... & 30997 \tabularnewline \hline
+\textbf{In} & 0.3 & 0.215 & 0.133 & 0.056 & ... & 0.385 \tabularnewline \hline
+\textbf{phi} & -1 & -0.946 & -0.892 & -0.838 & ... & 0.946 \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Parameters}} \tabularnewline \hline
+\textbf{ts\_fact} & \multicolumn{6}{c|}{1} \tabularnewline \hline
+\multicolumn{7}{|l|}{\cellcolor[gray]{0.9}\textit{Outputs}} \tabularnewline \hline
+\textbf{AC} & 0.3 & 0.215 & 0.133 & 0.056 & ... & 0.085 \tabularnewline \hline
+\textbf{DC} & 0 & 0 & 0 & 0 & ... & 0.3 \tabularnewline \hline
+\textbf{Exp. AC} & 0.3 & 0.215 & 0.133 & 0.056 & ... & 0.085 \tabularnewline \hline
+\textbf{Exp. DC} & 0 & 0 & 0 & 0 & ... & 0.3 \tabularnewline \hline
+\textbf{AC (DSP)} & 9830 & 7061 & 4372 & 1840 & ... & 2769 \tabularnewline \hline
+\textbf{DC (DSP)} & 0 & 0 & 0 & 0 & ... & 9830 \tabularnewline \hline
+\textbf{Exp. AC (DSP)} & 9830 & 7061 & 4372 & 1840 & ... & 2769 \tabularnewline \hline
+\textbf{Exp. DC (DSP)} & 0 & 0 & 0 & 0 & ... & 9830 \tabularnewline \hline
+\end{tabularx}
+\vspace{1ex}
+
+\begin{XtoCtabular}{Test settings}
+Tolerance AC & $\pm$3,0518e-05 ($\pm$1 LSB) \tabularnewline \hline
+Tolerance DC & $\pm$3,0518e-05 ($\pm$1 LSB) \tabularnewline \hline
+\end{XtoCtabular}
+
+\begin{XtoCtabular}{Test statistics}
+Min CPU cycles & 95 \tabularnewline \hline
+Max CPU cycles & 121 \tabularnewline \hline
+Avg CPU cycles & 95 \tabularnewline \hline
+\end{XtoCtabular}
